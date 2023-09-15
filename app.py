@@ -13,8 +13,6 @@ import math
 # Always set PyVista to plot off screen with Trame
 pv.OFF_SCREEN = True
 
-pv.global_theme.cmap = 'coolwarm' # Color map of the visualisation, change to liking
-
 cropping_box = pv.Cube(center = (150, -100, 0), x_length=2000, y_length=1300, z_length=2000) # Defining box of interest for one street
 cropping_box.rotate_z(50, inplace=True, point = (0, 0, 0))
 
@@ -71,7 +69,7 @@ current_interpolation_functions_wall = interpolation_functions_wall_am_T
 origin = (0, 0, 100)  # Origin of the clipping plane 
 normal = (0, 0, 1)  # Normal vector of the clipping plane
 
-actor_wall = plotter.add_mesh(wall,  cmap='coolwarm', scalars = 'Temperature', clim = [300,320])
+actor_wall = plotter.add_mesh(wall, scalars = 'Temperature', clim = [300,320])
 
 @state.change("Angle")
 def update_angle(Angle, **kwargs):
