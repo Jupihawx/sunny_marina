@@ -13,6 +13,8 @@ import math
 # Always set PyVista to plot off screen with Trame
 pv.OFF_SCREEN = True
 
+pv.start_xvfb()
+
 cropping_box = pv.Cube(center = (150, -100, 0), x_length=2000, y_length=1300, z_length=2000) # Defining box of interest for one street
 cropping_box.rotate_z(50, inplace=True, point = (0, 0, 0))
 
