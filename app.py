@@ -23,13 +23,13 @@ state, ctrl = server.state, server.controller
 state.trame__title = "Marina Temperature"
 
 # Load the mesh file
-wall = pv.read('./Model/buildings.vtu')
+wall = pv.read('/deploy/Model/buildings.vtu')
 wall['Temperature'] = np.zeros((wall.n_points))
 #buildings = pv.read('./Geometry/buildings.stl') # Building to display
 
 # Textured ground
 circle = pv.Circle(1200)
-texture= pv.read_texture('./Geometry/satellite_image_2-modified.png')
+texture= pv.read_texture('/deploy/Geometry/satellite_image_2-modified.png')
 circle.texture_map_to_plane(inplace=True)
 circle.rotate_z(93,inplace = True)
 circle.translate((40,210,0.1), inplace=True)
@@ -49,11 +49,11 @@ nb_bases_total=nb_angles_simulated*nb_velocities_simulated
 
 
 ## Load the pre-computed SVD model of T° over the wall
-bases_wall_T = np.load('./Model/total/bases_T_buildings_total_reduced60.npy', allow_pickle=True)
-mean_wall_T = np.load('./Model/total/T_buildings_total_mean.npy', allow_pickle=True)
-interpolation_functions_wall_am_T = np.load('./Model/total/interpolation_functions_sun_-1_TOTAL_T_buildings.npy', allow_pickle=True)
-interpolation_functions_wall_noon_T = np.load('./Model/total/interpolation_functions_sun_0_TOTAL_T_buildings.npy', allow_pickle=True)
-interpolation_functions_wall_pm_T = np.load('./Model/total/interpolation_functions_sun_1_TOTAL_T_buildings.npy', allow_pickle=True)
+bases_wall_T = np.load('/deploy/Model/total/bases_T_buildings_total_reduced60.npy', allow_pickle=True)
+mean_wall_T = np.load('/deploy/Model/total/T_buildings_total_mean.npy', allow_pickle=True)
+interpolation_functions_wall_am_T = np.load('/deploy/Model/total/interpolation_functions_sun_-1_TOTAL_T_buildings.npy', allow_pickle=True)
+interpolation_functions_wall_noon_T = np.load('/deploy/Model/total/interpolation_functions_sun_0_TOTAL_T_buildings.npy', allow_pickle=True)
+interpolation_functions_wall_pm_T = np.load('/deploy/Model/total/interpolation_functions_sun_1_TOTAL_T_buildings.npy', allow_pickle=True)
 
 
 ## List of initial variables
