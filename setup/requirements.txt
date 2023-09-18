@@ -1,6 +1,0 @@
-trame
-trame-vtk
-trame-vuetify
-numpy
-pyvista
-scipy

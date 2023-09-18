@@ -13,7 +13,7 @@ import math
 # Always set PyVista to plot off screen with Trame
 pv.OFF_SCREEN = True
 
-pv.start_xvfb()
+# pv.start_xvfb()
 pv.global_theme.cmap = 'coolwarm' # Color map of the visualisation, change to liking
 
 cropping_box = pv.Cube(center = (150, -100, 0), x_length=2000, y_length=1300, z_length=2000) # Defining box of interest for one street
